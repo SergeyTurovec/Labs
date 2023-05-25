@@ -1,0 +1,92 @@
+:root {
+    --scale: 1px;
+    --window-height: calc(322 * var(--scale));
+    --window-width: calc(232 * var(--scale));
+    --calculator-border-radius: 10px;
+}
+.macos-top-bar {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    left: 6px;
+    top: 6px;
+}
+.macos-button.close-button:hover{
+    filter: brightness(140%);
+}
+.macos-button.minimize-button:hover{
+    filter: brightness(130%);
+}
+.macos-button.fullscreen-button:hover{
+    filter: brightness(130%);
+}
+.macos-button {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+.close-button {
+    background-color: #FF5F57;
+}
+
+.minimize-button {
+    background-color: #FEBC2F;
+}
+
+.fullscreen-button {
+    background-color: #29C840;
+}
+body {
+    font-family: Helvetica,Arial, sans-serif;
+    position: relative;
+}
+table {
+    table-layout: fixed;
+    width: var(--window-width);
+}
+td {
+    height: calc(var(--window-height) / 7);
+    background-color: #606060;
+    text-align: center;
+    border: calc(var(--scale) * 0.5) solid #432655;
+    color: white !important;
+    font-size: calc(22 * var(--scale)) ;
+    width: 10px !important ;
+}
+td:hover {
+    background-color: #babbbd;
+}
+tr:nth-child(2) td {
+    background-color: #46454d !important;
+}
+
+tr:nth-child(2) td:hover {
+    background-color: #606060 !important;
+}
+
+tr td:last-child {
+    background-color: #ff9f0a !important;
+}
+tr:last-child td:first-child {
+    border-radius: 0 0 0 var(--calculator-border-radius);
+}
+
+tr:last-child td:last-child {
+    border-radius: 0 0 var(--calculator-border-radius) 0;
+}
+
+tr td:last-child:hover {
+    background-color: #c97a49 !important;
+}
+
+#display {
+    height:calc(var(--window-height) * 7 / 28 - 2px) !important;
+    text-align: right;
+    background-color: #4a494f !important;
+    padding-right: 20px;
+    font-size: calc(56 * var(--scale));
+    font-weight: 100;
+    border-radius: var(--calculator-border-radius) var(--calculator-border-radius) 0 0 ;
+    vertical-align: bottom;
+}
